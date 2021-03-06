@@ -19,7 +19,7 @@ export class EService {
     ];
 
     get(percentage) {
-        if(percentage)//use queryparam for get percentage
+        if(percentage)//use queryparammmmm for get percentage
         {
             let percent = this.dbArray.filter(item => item.e === true).length / this.dbArray.filter(item => item.e === false).length;
             return percent*100 + "% true to false"
