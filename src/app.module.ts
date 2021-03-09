@@ -5,10 +5,11 @@ import { AppService } from './app.service';
 import { CCrudModule } from './c-crud/c-crud.module';
 import { DModule } from './d/d.module';
 import { EModule } from './eCrud/e.module';
+import { AModule } from "./a-route/aRoute.module";
 import { DatabaseModule } from './database/database.module';
 
 @Module({
-  imports: [EModule, DModule,CCrudModule, DatabaseModule],
+  imports: [EModule, DModule,CCrudModule, AModule, DatabaseModule],
 
   controllers: [AppController],
   providers: [AppService],
