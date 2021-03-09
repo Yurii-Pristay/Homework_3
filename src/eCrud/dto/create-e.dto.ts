@@ -1,3 +1,5 @@
+import { IsBoolean} from 'class-validator'
 export class CreateEDto {
-    readonly e: boolean
+    @IsBoolean()
+    e: boolean
 }

@@ -1,3 +1,6 @@
+import { IsBoolean } from "class-validator";
+
 export class UpdateEDto {
-    readonly e: boolean
+    @IsBoolean()
+    e: boolean
 }
