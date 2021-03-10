@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CCrudModule } from './c-crud/c-crud.module';
 import { DModule } from './d/d.module';
 import { EModule } from './eCrud/e.module';
+import { AModule } from "./a-route/aRoute.module";
 import { DatabaseModule } from './database/database.module';
 import { RouteС } from './c-crud/routeС.entity';
 
@@ -21,7 +22,6 @@ import { RouteС } from './c-crud/routeС.entity';
       autoLoadEntities: true,
       synchronize: true,
     })],
-
   controllers: [AppController],
   providers: [AppService],
 })
