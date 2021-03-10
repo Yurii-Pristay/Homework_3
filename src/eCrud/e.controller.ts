@@ -9,26 +9,44 @@ export class EController {
     constructor(private readonly eService: EService) {
     }
 
-
     @Get()
-    get(@Query('percentage') percentage: boolean): DbObject[] | string {
-        return this.eService.get(percentage)
+    read(@Query('percentage') percentage: boolean) {
+        return this.eService.read(percentage)
     }
 
     @Post()
-    @HttpCode(HttpStatus.CREATED)
-    create(@Body() createE: CreateEDto): DbObject {  
+    create(@Body() createE: CreateEDto) {
         return this.eService.create(createE)
     }
-
-    @Put(':id') 
-    update(@Body() updateE: UpdateEDto, @Param('id', ParseIntPipe) id: number): DbObject {
-        return this.eService.update(updateE,id)
+    @Put(':id')
+    update(@Body() updateE: Partial<UpdateEDto>, @Param('id', ParseIntPipe) id: number) {
+        return this.eService.update(id, updateE)
     }
 
     @Delete(':id')
-    delete(@Param('id', ParseIntPipe) id: number): string {
+    delete(@Param('id', ParseIntPipe) id: number) {
         return this.eService.delete(id)
     }
+
+    // @Get()
+    // get(@Query('percentage') percentage: boolean): DbObject[] | string {
+    //     return this.eService.get(percentage)
+    // }
+
+    // @Post()
+    // @HttpCode(HttpStatus.CREATED)
+    // create(@Body() createE: CreateEDto): DbObject {  
+    //     return this.eService.create(createE)
+    // }
+
+    // @Put(':id') 
+    // update(@Body() updateE: UpdateEDto, @Param('id', ParseIntPipe) id: number): DbObject {
+    //     return this.eService.update(updateE,id)
+    // }
+
+    // @Delete(':id')
+    // delete(@Param('id', ParseIntPipe) id: number): string {
+    //     return this.eService.delete(id)
+    // }
 
 }

@@ -1,3 +1,4 @@
+import { DbObject } from './../interfaces/DbObject';
 import { Controller, Post, Put, Delete, Get, Param, Body, Query } from '@nestjs/common';
 import { AService } from './aRoute.service';
 import { aUpdateDto } from './dtoForA/update-aroute.dto';
@@ -12,7 +13,7 @@ export class AController {
     }
 
     @Post()
-    POST(@Body() aCreateDto:aCreateDto): AObj {
+    POST(@Body() aCreateDto:aCreateDto): DbObject {
         return this.aService.POST(aCreateDto);
     }
 
@@ -28,7 +29,7 @@ export class AController {
 
 
     @Get()
-    GET(@Query('id') id:number):AObj[] {
+    GET(@Query('id') id:number):DbObject[] {
         return this.aService.GET(id);
 
     }
