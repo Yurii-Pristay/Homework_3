@@ -15,7 +15,7 @@ import { RouteС } from './c-crud/routeС.entity';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: 'pgadmin2021',
+      password: '',
       database: 'routesdb',
       entities:[RouteС],
       autoLoadEntities: true,
