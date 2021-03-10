@@ -1,4 +1,7 @@
+import { IsNumber } from 'class-validator';
+
 export class cUpdateDto {
-    //readonly id: number;
+    
+    @IsNumber()
     readonly c: number;
 }
