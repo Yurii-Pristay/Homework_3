@@ -8,6 +8,7 @@ import { EModule } from './eCrud/e.module';
 import { AModule } from "./a-route/aRoute.module";
 import { DatabaseModule } from './database/database.module';
 import { RouteС } from './c-crud/routeС.entity';
+import { E } from './eCrud/e.entity';
 
 @Module({
   imports: [EModule, DModule,CCrudModule, DatabaseModule,
@@ -18,7 +19,7 @@ import { RouteС } from './c-crud/routeС.entity';
       username: 'postgres',
       password: '',         
       database: 'routesdb',
-      entities:[RouteС],
+      entities:[RouteС, E],
       autoLoadEntities: true,
       synchronize: true,
     })],

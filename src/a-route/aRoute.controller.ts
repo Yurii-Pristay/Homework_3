@@ -1,3 +1,4 @@
+import { DbObject } from './../interfaces/DbObject';
 import { Controller, Post, Put, Delete, Get, Param, Body, Query } from '@nestjs/common';
 import { AService } from './aRoute.service';
 import { aUpdateDto } from './dtoForA/update-aroute.dto';
@@ -11,10 +12,12 @@ export class AController {
     constructor(readonly aService: AService) {
     }
 
-    // @Post()
-    // POST(@Body() aCreateDto:aCreateDto): AObj {
-    //     return this.aService.POST(aCreateDto);
-    // }
+    @Post()
+    POST(@Body() aCreateDto:aCreateDto): DbObject {
+        return this.aService.POST(aCreateDto);
+    }
+
+
 
     // @Put(':id')
     // PUT(@Param('id') id:number, @Body() aUpdateDto:aUpdateDto): string|object {
@@ -27,11 +30,12 @@ export class AController {
     // };
 
 
-    // @Get()
-    // GET(@Query('id') id:number):AObj[] {
-    //     return this.aService.GET(id);
 
-    // }
+    @Get()
+    GET(@Query('id') id:number):DbObject[] {
+        return this.aService.GET(id);
+
+    }
 
 
 }
