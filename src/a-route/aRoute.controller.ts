@@ -17,15 +17,18 @@ export class AController {
         return this.aService.POST(aCreateDto);
     }
 
-    @Put(':id')
-    PUT(@Param('id') id:number, @Body() aUpdateDto:aUpdateDto): string|object {
-        return this.aService.PUT(id, aUpdateDto)
-    };
 
-    @Delete(':id')
-    DELETE(@Param('id') id:number): string {
-        return this.aService.DELETE(id)
-    };
+
+    // @Put(':id')
+    // PUT(@Param('id') id:number, @Body() aUpdateDto:aUpdateDto): string|object {
+    //     return this.aService.PUT(id, aUpdateDto)
+    // };
+
+    // @Delete(':id')
+    // DELETE(@Param('id') id:number): string {
+    //     return this.aService.DELETE(id)
+    // };
+
 
 
     @Get()

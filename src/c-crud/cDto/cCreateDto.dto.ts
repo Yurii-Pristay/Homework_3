@@ -1,6 +1,11 @@
-import { IsNumber } from 'class-validator';
+import { IsNumber,IsString } from 'class-validator';
 
 export class cCreateDto {
+
+    @IsString()
+    type:string;
+
     @IsNumber()
-    readonly c: number;
+    speciality:number;
+    //c: number;
 }
