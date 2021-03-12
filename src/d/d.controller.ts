@@ -19,22 +19,25 @@ export class DController {
   constructor(private readonly dService: DService) {}
 
   @Get()
-  getAll(@Query('isPalindrome') isPalindrome: boolean): DObject[] {
+  getAll(@Query('isPalindrome') isPalindrome: boolean): Promise<DObject[]> {
     return this.dService.getAll(isPalindrome);
   }
 
   @Post()
-  create(@Body() d: CreateDDto): DObject {
+  create(@Body() d: CreateDDto): Promise<DObject> {
     return this.dService.create(d);
   }
 
   @Put(':id')
-  update(@Param('id', ParseIntPipe) id: number, @Body() d: UpdateDDto): object {
+  update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() d: UpdateDDto,
+  ): Promise<{ message: string }> {
     return this.dService.update(id, d);
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: number): object {
+  remove(@Param('id', ParseIntPipe) id: number): Promise<{ message: string }> {
     return this.dService.remove(id);
   }
 }

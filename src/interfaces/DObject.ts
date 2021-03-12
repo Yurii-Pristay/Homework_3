@@ -1,5 +1,5 @@
 export interface DObject {
-    readonly id: number;
+    id: number;
     d: string;
     isPalindrome?: boolean;
 }

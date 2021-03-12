@@ -1,5 +1,5 @@
 export interface DbObject {
-    readonly id: number;
+    id: number;
     a?: number[];
     b?: object;
     c?: number;
