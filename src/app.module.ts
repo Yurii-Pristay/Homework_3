@@ -10,9 +10,10 @@ import { DatabaseModule } from './database/database.module';
 import { RouteС } from './c-crud/routeС.entity';
 import { D } from './d/d.entity';
 import { E } from './eCrud/e.entity';
+import { A } from './a-route/a.entity';
 
 @Module({
-  imports: [CCrudModule, DModule, EModule, DatabaseModule,
+  imports: [AModule, CCrudModule, DModule, EModule, DatabaseModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -20,7 +21,7 @@ import { E } from './eCrud/e.entity';
       username: 'postgres',
       password: '',
       database: 'routesdb',
-      entities: [RouteС, D, E],
+      entities: [RouteС, D, E, A],
       autoLoadEntities: true,
       synchronize: true,
     })],
