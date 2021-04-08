@@ -6,6 +6,6 @@ export class A {
     @PrimaryColumn({type: "int"})
     id: number;
 
-    @Column()
+    @Column({ type: 'simple-array'})
     a: number[];
 }
