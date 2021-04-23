@@ -17,7 +17,7 @@ import { E } from './eCrud/e.entity';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: '',         
+      password: 'pgadmin2021',         
       database: 'routesdb',
       entities:[RouteС, E],
       autoLoadEntities: true,
